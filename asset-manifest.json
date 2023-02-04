@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/WebpackTemplate-/static/css/main.7acaea2f.css",
+    "main.js": "/WebpackTemplate-/static/js/main.5aa7686c.js",
+    "index.html": "/WebpackTemplate-/index.html",
+    "main.7acaea2f.css.map": "/WebpackTemplate-/static/css/main.7acaea2f.css.map",
+    "main.5aa7686c.js.map": "/WebpackTemplate-/static/js/main.5aa7686c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.5aa7686c.js"
+  ]
+}
