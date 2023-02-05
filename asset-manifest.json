@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Wallet-manager/static/css/main.7acaea2f.css",
-    "main.js": "/Wallet-manager/static/js/main.f6b55fa1.js",
+    "main.js": "/Wallet-manager/static/js/main.93277aa1.js",
     "index.html": "/Wallet-manager/index.html",
     "main.7acaea2f.css.map": "/Wallet-manager/static/css/main.7acaea2f.css.map",
-    "main.f6b55fa1.js.map": "/Wallet-manager/static/js/main.f6b55fa1.js.map"
+    "main.93277aa1.js.map": "/Wallet-manager/static/js/main.93277aa1.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.f6b55fa1.js"
+    "static/js/main.93277aa1.js"
   ]
 }
