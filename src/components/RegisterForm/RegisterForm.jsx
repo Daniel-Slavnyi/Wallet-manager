@@ -1,20 +1,25 @@
 import React from 'react';
-import { Button, Form, Input } from 'antd';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+import { omit } from 'lodash';
+
+import { register } from 'redux/auth/auth-thunk';
+
+import { Button, Form } from 'antd';
+import { LockOutlined, UserOutlined, MailOutlined } from '@ant-design/icons';
+import { InputElt, InputP } from './RegisterForm.styled';
 
 export default function RegisterForm() {
+  const dispatch = useDispatch();
+
   const onFinish = value => {
-    console.log(value);
+    dispatch(register(omit(value, 'confirm')));
   };
 
   return (
     <Form
       name="basic"
-      labelCol={{
-        span: 8,
-      }}
-      wrapperCol={{
-        span: 16,
-      }}
       style={{
         maxWidth: 600,
       }}
@@ -26,7 +31,6 @@ export default function RegisterForm() {
     >
       <Form.Item
         name="email"
-        label="E-mail"
         rules={[
           {
             type: 'email',
@@ -38,23 +42,14 @@ export default function RegisterForm() {
           },
         ]}
       >
-        <Input />
-      </Form.Item>
-      <Form.Item
-        label="Username"
-        name="username"
-        rules={[
-          {
-            required: true,
-            message: 'Please input your username!',
-          },
-        ]}
-      >
-        <Input />
+        <InputElt
+          autoComplete="username"
+          placeholder="E-mail"
+          prefix={<MailOutlined className="site-form-item-icon" />}
+        />
       </Form.Item>
 
       <Form.Item
-        label="Password"
         name="password"
         rules={[
           {
@@ -63,11 +58,14 @@ export default function RegisterForm() {
           },
         ]}
       >
-        <Input.Password />
+        <InputP
+          autoComplete="new-password"
+          placeholder="Password"
+          prefix={<LockOutlined className="site-form-item-icon" />}
+        />
       </Form.Item>
       <Form.Item
         name="confirm"
-        label="Confirm Password"
         dependencies={['password']}
         hasFeedback
         rules={[
@@ -87,19 +85,34 @@ export default function RegisterForm() {
           }),
         ]}
       >
-        <Input.Password />
+        <InputP
+          autoComplete="confirm-password"
+          placeholder="Confirm Password"
+          prefix={<LockOutlined className="site-form-item-icon" />}
+        />
       </Form.Item>
 
       <Form.Item
-        wrapperCol={{
-          offset: 8,
-          span: 16,
-        }}
+        name="username"
+        rules={[
+          {
+            required: true,
+            message: 'Please input your username!',
+          },
+        ]}
       >
+        <InputElt
+          autoComplete="username"
+          placeholder="Username"
+          prefix={<UserOutlined className="site-form-item-icon" />}
+        />
+      </Form.Item>
+      <Form.Item>
         <Button type="primary" htmlType="submit">
           Submit
         </Button>
       </Form.Item>
+      <Link to="/login">Log in</Link>
     </Form>
   );
 }
