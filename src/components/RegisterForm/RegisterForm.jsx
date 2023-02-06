@@ -8,7 +8,7 @@ import { register } from 'redux/auth/auth-thunk';
 
 import { Button, Form } from 'antd';
 import { LockOutlined, UserOutlined, MailOutlined } from '@ant-design/icons';
-import { InputElt, InputP } from './RegisterForm.styled';
+import { FormEl, InputElt, InputP } from './RegisterForm.styled';
 
 export default function RegisterForm() {
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ export default function RegisterForm() {
   };
 
   return (
-    <Form
+    <FormEl
       name="basic"
       style={{
         maxWidth: 600,
@@ -113,6 +113,6 @@ export default function RegisterForm() {
         </Button>
       </Form.Item>
       <Link to="/login">Log in</Link>
-    </Form>
+    </FormEl>
   );
 }

@@ -1,17 +1,27 @@
 import React from 'react';
 import RegisterForm from '../../components/RegisterForm/RegisterForm';
 import ContainerRegister from 'components/ContainerRegister/ContainerRegister';
-import { BgRegister } from './RegisterPage.styled';
+import {
+  BgRegister,
+  WrapRegister,
+  WrapRegisterForm,
+} from './RegisterPage.styled';
 
 export default function RegisterPage() {
   return (
-    <ContainerRegister>
+    <>
       <section>
-        <BgRegister></BgRegister>
+        <ContainerRegister>
+          <WrapRegister>
+            <div>
+              <BgRegister></BgRegister>
+            </div>
+            <WrapRegisterForm>
+              <RegisterForm />
+            </WrapRegisterForm>
+          </WrapRegister>
+        </ContainerRegister>
       </section>
-      <section>
-        <RegisterForm />
-      </section>
-    </ContainerRegister>
+    </>
   );
 }
