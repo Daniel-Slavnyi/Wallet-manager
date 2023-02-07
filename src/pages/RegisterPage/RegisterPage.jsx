@@ -2,6 +2,7 @@ import React from 'react';
 import RegisterForm from '../../components/RegisterForm/RegisterForm';
 import ContainerRegister from 'components/ContainerRegister/ContainerRegister';
 import {
+  BackDrop,
   BgRegister,
   WrapRegister,
   WrapRegisterForm,
@@ -17,6 +18,7 @@ export default function RegisterPage() {
               <BgRegister></BgRegister>
             </div>
             <WrapRegisterForm>
+              <BackDrop />
               <RegisterForm />
             </WrapRegisterForm>
           </WrapRegister>

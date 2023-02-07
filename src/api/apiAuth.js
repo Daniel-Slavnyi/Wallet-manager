@@ -6,7 +6,7 @@ export const backend = axios.create({
 
 export const registerUser = async body => {
   try {
-    const { data } = backend.post('auth/sign-up', body);
+    const { data } = await backend.post('/auth/sign-up', body);
     return data;
   } catch (error) {
     return error;
@@ -15,7 +15,7 @@ export const registerUser = async body => {
 
 export const logInUser = async body => {
   try {
-    const { data } = backend.post('auth/sign-in', body);
+    const { data } = await backend.post('/auth/sign-in', body);
     return data;
   } catch (error) {
     return error;
@@ -24,7 +24,7 @@ export const logInUser = async body => {
 
 export const logOutUser = async () => {
   try {
-    const { data } = backend.delete('/api/auth/sign-out');
+    const { data } = await backend.delete('/auth/sign-out');
     return data;
   } catch (error) {
     return error;

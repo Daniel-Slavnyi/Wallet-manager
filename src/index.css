@@ -29,7 +29,7 @@ code {
   background-color: transparent;
 }
 
-.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {
+.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):focus-within {
     border-color: rgba(36, 204, 167, 1);
     border-inline-end-width: 1px;
     z-index: 1;

@@ -16,10 +16,13 @@ const authslice = createSlice({
     builder
       //   register
       .addCase(register.pending, (state, action) => {
-        console.log(action);
+        state.isLoading = true;
       })
       .addCase(register.fulfilled, (state, action) => {
-        console.log(action);
+        state.isLoading = false;
+        state.token = action.payload.token;
+        state.user = action.payload.user;
+        state.isLoggedIn = true;
       })
       .addCase(register.rejected, (state, action) => {
         console.log(action);

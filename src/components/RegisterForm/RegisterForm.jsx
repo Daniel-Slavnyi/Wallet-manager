@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { omit } from 'lodash';
@@ -7,11 +7,17 @@ import { omit } from 'lodash';
 import { register } from 'redux/auth/auth-thunk';
 
 import { Button, Form } from 'antd';
-import { LockOutlined, UserOutlined, MailOutlined } from '@ant-design/icons';
+import {
+  LockOutlined,
+  UserOutlined,
+  MailOutlined,
+  PoweroffOutlined,
+} from '@ant-design/icons';
 import { FormEl, InputElt, InputP } from './RegisterForm.styled';
 
 export default function RegisterForm() {
   const dispatch = useDispatch();
+  const isLoading = useSelector(state => state.auth.isLoading);
 
   const onFinish = value => {
     dispatch(register(omit(value, 'confirm')));
@@ -108,7 +114,12 @@ export default function RegisterForm() {
         />
       </Form.Item>
       <Form.Item>
-        <Button type="primary" htmlType="submit">
+        <Button
+          type="primary"
+          htmlType="submit"
+          icon={<PoweroffOutlined />}
+          loading={isLoading}
+        >
           Submit
         </Button>
       </Form.Item>
